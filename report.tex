@@ -1,0 +1,85 @@
+% -------------------------------------------------
+%  Watershed Segmentation – Clean Assignment Report
+% -------------------------------------------------
+\documentclass[12pt]{article}
+\usepackage{graphicx}      % for images
+\usepackage{geometry}      % margins
+\usepackage{verbatim}      % for \verbatiminput
+\geometry{margin=1in}
+
+% -------------------------------------------------
+\begin{document}
+
+% ---------- Clean Centered Title Page ----------
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\LARGE\bfseries Digital Image and Video Processing\par}
+    \vspace{1.5cm}
+    {\Large Watershed Segmentation — Assignment\par}
+    \vspace{3cm}
+    {\large
+    \begin{tabular}{c}
+        \textbf{Name:} Nandhu Krishnan A \\[0.5em]
+        \textbf{Registration No:} 80522014 \\[0.5em]
+        \textbf{Submitted to:} Prof. Madhu S Nair \\[0.5em]
+        \textbf{Date:} \today
+    \end{tabular}
+    }
+    \vfill
+\end{titlepage}
+
+% ---------- Written Report ----------
+% \section*{Written Report}
+% \vspace{1cm}
+% \textit{Print this page and insert your handwritten explanation after the title page.}
+% \clearpage
+
+% ---------- Code (read from file) ----------
+\section*{Code}
+\verbatiminput{main.py}
+% \clearpage
+
+% ---------- Outputs (All 5 on ONE page) ----------
+\section*{Outputs}
+
+% Row 1: Original + Threshold
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{outputs/coins/01_original.png}
+        \caption{Original input image}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{outputs/coins/03_threshold.png}
+        \caption{Binary threshold (Otsu + inverse)}
+    \end{minipage}
+\end{figure}
+
+% Row 2: Markers
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{outputs/coins/05_markers.png}
+    \caption{Marker preparation (sure background, distance transform, sure foreground, unknown region)}
+\end{figure}
+
+% Row 3: Watershed markers + Final result
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{WatershedSegmentation/outputs/coins/07_watershed_markers.png}
+        \caption{Watershed markers after segmentation}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{WatershedSegmentation/outputs/coins/08_watershed_contours.png}
+        \caption{Final result with contours drawn on original image}
+    \end{minipage}
+\end{figure}
+
+\end{document}
